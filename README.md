@@ -45,7 +45,7 @@ Things you may want to cover:
 |name|string|null: false|
 |image|string|
 |term|string|null: false|
-|style|string|null: false|
+<!-- |style|string|null: false| -->
 |seat-number|string|
 |twitter|string|
 |fermer-job|string|
