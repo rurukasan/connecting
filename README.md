@@ -34,28 +34,27 @@ Things you may want to cover:
 
 ### Association
 - has_many :profiles,dependent :destroy
-- has_many :tweets
+<!-- - has_many :tweets
 - has_many :comments
-- has_many :memoes
+- has_many :memoes -->
 
 ## profilesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|nickname|string|null: false|
 |image|string|
-|term|string|null: false|
-<!-- |style|string|null: false| -->
-|seat-number|string|
+|term|integer|null: false|
+|style|string|null: false|
+|seat_number|integer|
 |twitter|string|
-|fermer-job|string|
-|shout-message|string|
-|user_id|integer|null: false, foreign_key: true|
+|former_job|string|
+|shout_message|text|
+|user_id|references|null: false, foreign_key: true|
 ### Association
-- has_many :has_many
 - belongs_to :user
 
-## memoesテーブル
+<!-- ## memoesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -90,4 +89,4 @@ Things you may want to cover:
 
 ### Association
 - belongs_to: user
-- belongs_to: tweet
+- belongs_to: tweet -->

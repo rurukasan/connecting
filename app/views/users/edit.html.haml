@@ -1,21 +1,76 @@
-#account-page.account-page
-  .account-page__inner.clearfix
-    .account-page__inner--left.account-page__header
-      %h2 Edit Account
-      %h5 アカウントの編集
-      = link_to "ログアウト", '#', class: 'btn'
-      = link_to "トップページに戻る", :back, class: 'btn'
-    .account-page__inner--right.user-form
-      = form_for(current_user) do |f|
-        .field
-          .field-label
-            = f.label :name
-          .field-input
-            = f.text_field :name, autofocus: true
-        .field
-          .field-label
-            = f.label :email
-          .field-input
-            = f.email_field :email
-        .actions
-          = f.submit "Update", class: 'btn'
+.user
+  .user__info
+    %h1 ⭐️TECH::CAMP生の為のSNS⭐️会員登録
+  .user__form
+    .user__input__center
+      = form_for(resource, as: resource_name, url: new_user_registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .user__input__top
+          本名(他の人には表示されません)
+          %span.red
+            必須
+          = f.text_field :name, autofocus: true, autocomplete: "nickname", class: "text-field", placeholder: "例) 岡本琉雅"
+        .user__input
+          メールアドレス(他の人には表示されません)
+          %span.red
+            必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "text-field", placeholder: "例) ruka20020212@icloud.com"
+        .user__input
+          = f.label :password, "パスワード"
+          %em
+            7文字以上
+          %span.red
+            必須
+          = f.password_field :password, autocomplete: "new-password",  class: "text-field", placeholder: "例) 半角英数字でお願いします"
+        %label
+          %input.user__input__password{:type => "checkbox"}>
+            パスワードを表示する
+        = f.fields_for :profile, @user.build_profile do |i|
+          .user__input__identification
+            プロフィール設定(他の人に表示されるよ)
+            .text-gray
+              %p 後からでも編集できますが,必須の表記がある欄はnull :falseがかかっているので一応全て記入してください。
+          .user__input
+            ニックネーム
+            %span.red
+              必須
+            .user__input__name
+              = i.text_field :nickname, placeholder: "例) るるかさん", class: "user__input__family text-field-n"
+          .user__input
+            現在座ってる座席
+            .user__input__name
+              = i.text_field :seat_number, placeholder: "例) 23(毎回書き直してくれたら嬉しい)", class: "user__input__family text-field-n"
+          .user__input
+            TwitterのID(DM機能作れてない..ごめそ)
+            .user__input__name
+              = i.text_field :twitter, placeholder: "例) @rurukasan0212", class: "user__input__family text-field-n"
+          .user__input
+            前職(会話のネタに)
+            .user__input__name
+              = i.text_field :former_job, placeholder: "例) ニート", class: "user__input__family text-field-n"
+          .user__input
+            みんなに一言
+            .user__input__name
+              = i.text_area :shout_message, placeholder: "例) (￣▽￣)", class: "user__input__family text-field-n"
+          .user__input
+            期
+            .user__input__name
+              = i.text_field :term, placeholder: "例) 73期", class: "user__input__family text-field-n"
+          .user__input
+            コース
+            .user__input__name
+              = i.text_field :style, placeholder: "例) 短期コース", class: "user__input__family text-field-n"
+          -# .user__input
+          -#   .user__input__birth
+          -#     期・コース
+          -#     %span.red
+          -#       必須
+          -#     %br/
+          -#     = i.select :term, ['---','73','74'], class: 'select-field'
+          -#     = i.select :style, ['---','短期コース'], class: "select-field"
+            .text-gray
+              %p ※ 本人情報は正しく入力して下さい。会員登録後、修正するにはお時間を頂く場合があります。
+          .user__input
+            「新規登録する」を押すことにより、忘れがちな人脈形成が容易になります。
+          .user__input__actions
+            = f.submit "新規登録", class: 'red-btn'
