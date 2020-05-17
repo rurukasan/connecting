@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
   }
 
-  root 'profiles#indexen'
+  root 'profiles#index'
 end
