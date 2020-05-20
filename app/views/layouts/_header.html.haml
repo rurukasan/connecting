@@ -1,0 +1,10 @@
+.header__main
+  .header__main__title
+    = link_to root_path,class: "CTClink" do
+      CTC
+      -# = image_tag 'logo.png', alt: '', height: '80', width: '300'
+  .header__main__form
+    .header__main__form__field
+      %input.hoge{type: "search", placeholder: "キーワードで検索"}
+    .header__main__form__button
+      = icon('fa', 'search')
