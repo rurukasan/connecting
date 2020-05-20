@@ -1,0 +1,142 @@
+@media screen and (min-width: 375px) {
+  body {
+    color: #333;
+    font-family: Verdana,sans-serif;
+    margin: 0;
+  }
+
+  header {
+    background-color: #efefef;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon img {
+    border-radius: 50%;
+    border-width: 4px;
+    border-style: solid;
+    border-color: white;
+  }
+
+  .info {
+    margin-left: 32px;
+
+    h1 {
+      font-weight: normal;
+      font-size: 24px;
+      margin: 0px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+
+      li {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .works {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .MidTi {
+    font-weight: normal;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .works {
+    > section {
+      margin-bottom: 60px;
+
+      > h1 {
+        font-weight: normal;
+      }
+    }
+
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  footer p {
+    text-align: center;
+    font-size: 14px;
+    scroll-margin-bottom: 60px;
+    color: gray;
+  }
+}
+
+.download {
+  background: image-url('3139480.jpg');
+  width: 100vw;
+  height: 600px;
+  position: relative;
+  &__title {
+    color: #6b6b6b;
+    position: absolute;
+    top: 200px;
+    left: 150px;
+    font-size: 60px;
+  }
+  &__word {
+    position: absolute;
+    top: 450px;
+    left: 200px;
+    font-size: 30px;
+    color: #1a1919;
+  }
+}
+
+.new-comment {
+  margin:  10px  auto;
+  width: 620px;
+  height: 100%;
+  padding: 24px 40px 40px;
+  background-color: #fff;
+  .comment {
+    width: 100%;
+    min-height: 104px;
+    padding: 10px;
+  } 
+  .notice-msg {
+    padding: 8px;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    margin: 10px 0;
+    text-align: left;
+  }
+  .comment-btn {
+    line-height: 48px;
+    background: $blue;
+    border: 1px solid $blue;
+    color: #fff;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 100px;
+  }
+  .comment-list {
+    margin-top: 10px;
+  }
+}

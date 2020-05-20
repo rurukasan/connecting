@@ -1,0 +1,40 @@
+.header
+  = render partial: "layouts/header"
+%body
+  %header
+    - @profiles.each do |profile|
+      .container
+        .icon
+          %img
+            = profile.image
+        .info
+          %h1 
+            = profile.nickname
+          %p 
+            期:
+            = profile.term
+          %p 
+            コース:
+            = profile.style
+          %p 
+            座席:
+            = profile.seat_number
+          %p 
+            Twitter:
+            = profile.twitter
+          %p 
+            前職: 
+            = profile.former_job
+          %p 
+            みんなへひとこと:
+            = profile.shout_message
+          %ul
+            %li
+              = link_to "詳細ページ",profile_path(current_user.id)
+            %li
+              = link_to "メモを見る",root_path
+  .download
+    .download__title
+      便利なら宣伝して下さい😇😇
+    .download__word
+      僕が喜びます。

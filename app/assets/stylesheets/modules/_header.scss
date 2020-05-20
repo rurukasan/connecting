@@ -1,0 +1,47 @@
+.header {
+  width: 100vw;
+  height: 120px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: white;
+  &__main {
+    width: 80vw;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+    &__title {
+      margin-right: 20px;
+      font-size: 30px;
+      line-height: 60px;
+      text-decoration: none;
+      .CTClink{
+        text-decoration: none;
+      }
+    }
+    &__form {
+      width: 70vw;
+      height: 40px;
+      display: flex;
+      &__field {
+        .hoge{
+          padding-left: 26px;
+          height: 40px;
+        }
+        input {
+          height: 40px;
+          width: 66vw;
+        }
+      }
+      &__button {
+        width: 40px;
+        background-color: #3CCACE;
+        text-align: center;
+        line-height: 40px;
+        color: white;
+      }
+    }
+  }
+}

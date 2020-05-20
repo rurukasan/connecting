@@ -1,0 +1,35 @@
+%header
+  .container
+    .icon
+      %img
+        = @profile.image
+    .info
+      %h1 
+        = @profile.nickname
+      %p 
+        期:
+        = @profile.term
+      %p 
+        コース:
+        = @profile.style
+      %p 
+        座席:
+        = @profile.seat_number
+      %p 
+        Twitter:
+        = @profile.twitter
+      %p 
+        前職: 
+        = @profile.former_job
+      %p 
+        みんなへひとこと:
+        = @profile.shout_message
+
+  -# .new-comment
+  -#   = form_with(model: [@profile, @memo], local: true) do |form|
+  -#     = form.text_area :text, placeholder: "コメントする", rows: "2", class: "comment"
+  -#     %p.notice-msg
+  -#       相手のことを考え丁寧なコメントを心がけましょう。
+  -#       %br
+  -#         不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  -#     = form.submit "メモする", class: "comment-btn"
