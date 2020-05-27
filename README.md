@@ -1,29 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
 # Name
 
 Connecting with TECH::CAMP (CTC)
@@ -60,9 +34,9 @@ https://nameless-atoll-34353.herokuapp.com/
 
 上記URLを開くと、ログイン画面が開くので下記の情報を入力し、ログインする。
 
-本名: テストテスト
-メールアドレス: test@test.com
-パスワード: aaaaaaaa(aが8つ)
+* 本名: テストテスト
+* メールアドレス: test@test.com
+* パスワード: aaaaaaaa(aが8つ)
 
 他の登録している受講生の一覧ページに移動し、それぞれのユーザーの詳細ページに飛ぶ事が出来る。
 
