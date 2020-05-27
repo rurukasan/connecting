@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200503210958) do
+ActiveRecord::Schema.define(version: 20200521092123) do
+
+  create_table "memos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "profile_id"
+    t.text     "text",       limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["profile_id"], name: "index_memos_on_profile_id", using: :btree
+    t.index ["user_id"], name: "index_memos_on_user_id", using: :btree
+  end
 
   create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nickname",                    null: false
@@ -18,7 +28,7 @@ ActiveRecord::Schema.define(version: 20200503210958) do
     t.integer  "term",                        null: false
     t.string   "style",                       null: false
     t.integer  "seat_number"
-    t.integer  "twitter"
+    t.string   "twitter"
     t.string   "former_job"
     t.text     "shout_message", limit: 65535
     t.integer  "user_id"
@@ -41,5 +51,7 @@ ActiveRecord::Schema.define(version: 20200503210958) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "memos", "profiles"
+  add_foreign_key "memos", "users"
   add_foreign_key "profiles", "users"
 end
